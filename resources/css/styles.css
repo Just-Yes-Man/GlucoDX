@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f3f7;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+    padding: 40px;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    margin-bottom: 40px;
+}
+
+.summary h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 15px;
+    margin: 5px 0 25px;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 230px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card p {
+    color: #666;
+    margin: 0;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 28px;
+    color: #222;
+}
+
+/* ===== PACIENTES ===== */
+.patients-section {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.patients-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 450px;
+}
+
+.patients-card h3 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.patients-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.patients-card th {
+    color: #666;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.patients-card td {
+    border-top: 1px solid #eee;
+    padding: 10px 5px;
+}
+
+.view-all {
+    color: #1800AD;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.badge.normal {
+    background: #d9ffd9;
+    color: #006d00;
+    border: 1px solid #8fdc8f;
+}
+
+.badge.pre {
+    background: #fff6cc;
+    color: #b8860b;
+    border: 1px solid #f5d96a;
+}
+
+.badge.diabetes {
+    background: #ffd6d6;
+    color: #a30000;
+    border: 1px solid #f57a7a;
+}
+
+/* ===== CHART ===== */
+.chart {
+    flex: 1;
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 350px;
+}
+
+/* ===== DIAGNÓSTICOS ===== */
+.diagnostics {
+    margin-top: 40px;
+}
+
+.diagnostics h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.diagnostics-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #555;
+}
+
+.diagnostics-card p {
+    margin: 10px 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1800AD;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.profile {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /
+}
+
+.chart {
+    width: 400px;  
+    height: 300px; 
+    margin: 0 auto; 
+}
