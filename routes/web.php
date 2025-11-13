@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get('/pacientes', function () {
     return view('pacientes');
 })->name('pacientes');
+});
+
+Route::get('/prueba-modal', function () {
+    return view('prueba');
+});

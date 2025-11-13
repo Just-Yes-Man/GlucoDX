@@ -2,6 +2,7 @@
 
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <div class="dashboard">
     <section class="summary">
         <h2>Hola Dr. Sam</h2>
@@ -23,6 +24,11 @@
                 <h3>5</h3>
             </div>
         </div>
+
+        <!-- 🔘 Botón para abrir el modal -->
+        <button class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#pacienteModal">
+            Asignar nuevo paciente
+        </button>
     </section>
 
     <section class="patients-section">
@@ -34,7 +40,7 @@
                         <th>Nombre</th>
                         <th>Edad</th>
                         <th>Última HbA1c</th>
-                        <th>Riesgo</th>
+                        <th>Ultima diagnosis</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,4 +75,8 @@
         </div>
     </section>
 </div>
+
+<!-- 🧩 Aquí se incluye el modal reutilizable -->
+@include('components.popup_pacientes')
+
 @endsection
