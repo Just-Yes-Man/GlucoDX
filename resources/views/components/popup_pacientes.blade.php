@@ -24,10 +24,13 @@
               <th>Acción</th>
             </tr>
           </thead>
-          <tbody id="tablaPacientes">
-            
-          </tbody>
+          <tbody id="tablaPacientes"></tbody>
         </table>
+
+        <!-- PAGINACIÓN -->
+        <nav>
+          <ul class="pagination justify-content-center" id="paginacion"></ul>
+        </nav>
 
       </div>
       <div class="modal-footer">
@@ -36,7 +39,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="position-fixed top-0 end-0 p-3" style="z-index: 1100">
   <div id="alertaPaciente" class="alert alert-success alert-dismissible fade" role="alert">
@@ -47,21 +49,33 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const pacientes = [
-      {id: 1, nombre: 'Juan Pérez', curp: 'PEJJ010101HDFRRN09', sexo: 'Hombre'},
-      {id: 2, nombre: 'María López', curp: 'LOPM900101MDFRRR05', sexo: 'Mujer'},
-      {id: 3, nombre: 'Carlos Gómez', curp: 'GOMC850501HDFRTR02', sexo: 'Hombre'}
-    ];
+    const pacientes = [];
+    // Generamos más datos de ejemplo
+    for (let i = 1; i <= 42; i++) {
+      pacientes.push({
+        id: i,
+        nombre: `Paciente ${i}`,
+        curp: `CURP${i.toString().padStart(4, '0')}`,
+        sexo: i % 2 === 0 ? 'Hombre' : 'Mujer'
+      });
+    }
 
     const tabla = document.getElementById('tablaPacientes');
     const input = document.getElementById('busquedaPaciente');
-    const alerta = new bootstrap.Alert(document.getElementById('alertaPaciente'));
     const alertaDiv = document.getElementById('alertaPaciente');
+    const paginacion = document.getElementById('paginacion');
 
-    
+    const itemsPorPagina = 5;
+    let paginaActual = 1;
+    let listaFiltrada = [...pacientes];
+
     function renderTabla(lista) {
       tabla.innerHTML = '';
-      lista.forEach(p => {
+      const inicio = (paginaActual - 1) * itemsPorPagina;
+      const fin = inicio + itemsPorPagina;
+      const paginaDatos = lista.slice(inicio, fin);
+
+      paginaDatos.forEach(p => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${p.id}</td>
@@ -72,17 +86,34 @@
         `;
         tabla.appendChild(tr);
       });
+
+      renderPaginacion(lista.length);
     }
 
-    renderTabla(pacientes);
+    function renderPaginacion(totalItems) {
+      const totalPaginas = Math.ceil(totalItems / itemsPorPagina);
+      paginacion.innerHTML = '';
 
-  
+      for (let i = 1; i <= totalPaginas; i++) {
+        const li = document.createElement('li');
+        li.className = `page-item ${i === paginaActual ? 'active' : ''}`;
+        li.innerHTML = `<button class="page-link">${i}</button>`;
+        li.addEventListener('click', () => {
+          paginaActual = i;
+          renderTabla(listaFiltrada);
+        });
+        paginacion.appendChild(li);
+      }
+    }
+
     document.getElementById('btnBuscarPaciente').addEventListener('click', () => {
       const q = input.value.toLowerCase();
-      const filtrados = pacientes.filter(p => p.nombre.toLowerCase().includes(q) || p.curp.toLowerCase().includes(q));
-      renderTabla(filtrados);
+      listaFiltrada = pacientes.filter(p =>
+        p.nombre.toLowerCase().includes(q) || p.curp.toLowerCase().includes(q)
+      );
+      paginaActual = 1;
+      renderTabla(listaFiltrada);
     });
-
 
     tabla.addEventListener('click', (e) => {
       if (e.target.classList.contains('seleccionar-btn')) {
@@ -90,7 +121,6 @@
         const seleccionado = pacientes.find(p => p.id == id);
         console.log(`Paciente ${seleccionado.nombre} asignado al médico (simulado)`);
 
-  
         alertaDiv.classList.add('show');
         setTimeout(() => alertaDiv.classList.remove('show'), 2500);
 
@@ -98,5 +128,7 @@
         modal.hide();
       }
     });
+
+    renderTabla(listaFiltrada);
   });
 </script>
