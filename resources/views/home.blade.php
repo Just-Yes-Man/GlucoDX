@@ -7,6 +7,9 @@
     <section class="summary">
         <h2>Hola Dr. Sam</h2>
         <p class="subtitle">Resumen de pacientes</p>
+        
+         <a href="{{ route('pacientes') }}" class="btn-pacientes">Ver lista de pacientes</a>
+
         <div class="cards">
             <div class="card">
                 <p>Pacientes</p>
