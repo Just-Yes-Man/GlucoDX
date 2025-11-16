@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/prueba-modal', function () {
     return view('prueba');
 });
+Route::get('/seguimiento', function () {
+    return view('seguimiento');
+});
