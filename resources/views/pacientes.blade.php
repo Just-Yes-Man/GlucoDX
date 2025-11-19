@@ -29,7 +29,9 @@
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Buscar por nombre o CURP" />
             </div>
-            <button class="add-btn">+ Agregar</button>
+            @include('components.popup_pacientes')
+
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#pacienteModal">+ Agregar</button>
         </div>
     </div>
 
@@ -64,14 +66,14 @@
  
 <div id="modalOverlay" class="modal-overlay"></div>
 
-<div id="optionsModal" class="modal-content">
+<div id="optionsModal" class="pac-modal">
     
-    <div class="modal-header">
+    <div class="pac-modal-header">
         <h2>Opciones</h2>
         <button id="closeModalBtn" class="modal-close-btn">&times;</button>
     </div>
 
-    <div class="modal-body">
+    <div class="pac-modal-body">
         <div class="modal-patient-info">
             <span id="modalPatientName">Nombre del Paciente</span>
             <span id="modalPatientPeso">Peso: --</span>
@@ -82,7 +84,7 @@
         <button id="btnGenerarConsulta" class="modal-option-btn">Generar consulta</button>
     </div>
 
-    <div class="modal-footer">
+    <div class="pac-modal-footer">
         <button class="modal-next-btn">
             Siguiente
             <i class="fas fa-arrow-right"></i>
@@ -95,12 +97,12 @@
 
 
 {{-- MODAL DE RESULTADO (ÉXITO) --}}
-<div id="predictionResultModal" class="modal-content modal-content-prediction">
-    <div class="modal-header">
+<div id="predictionResultModal" class="pac-modal pac-modal-prediction">
+    <div class="pac-modal-header">
         <h2>Resultados</h2>
         <button id="closeResultModalBtn" class="modal-close-btn">&times;</button>
     </div>
-    <div class="modal-body-prediction">
+    <div class="pac-modal-body-prediction">
         <h3>Fecha del diagnóstico</h3>
         <p id="resultDate">--/--/----</p>
         
@@ -116,12 +118,12 @@
 </div>
 
 {{-- MODAL DE INFORMACIÓN INSUFICIENTE (ERROR) --}}
-<div id="predictionErrorModal" class="modal-content modal-content-prediction">
-    <div class="modal-header">
+<div id="predictionErrorModal" class="pac-modal pac-modal-prediction">
+    <div class="pac-modal-header">
         <h2>Información Insuficiente</h2>
         <button id="closeErrorModalBtn" class="modal-close-btn">&times;</button>
     </div>
-    <div class="modal-body-prediction" style="text-align: center;">
+    <div class="pac-modal-body-prediction" style="text-align: center;">
         <div class="warning-icon">
             <i class="fas fa-exclamation-triangle"></i>
         </div>
@@ -134,9 +136,9 @@
  
  
 {{--    HTML DEL MODAL DE REGISTRO DE CONSULTA (NUEVO) --}}
-<div id="consultaModal" class="modal-content">
+<div id="consultaModal" class="pac-modal">
     
-    <div class="modal-header">
+    <div class="pac-modal-header">
         <h2>REGISTRO DE CONSULTA</h2>
         <button id="closeConsultaModalBtn" class="modal-close-btn">&times;</button>
     </div>
@@ -156,7 +158,7 @@
         </div>
     </div>
 
-    <div class="modal-body modal-body-form">
+    <div class="pac-modal-body pac-modal-body-form">
         
         <div id="consultaStep1" class="modal-step active">
             <div class="form-grid">
@@ -239,7 +241,7 @@
         
     </div>
 
-    <div class="modal-footer" style="justify-content: space-between;">
+    <div class="pac-modal-footer" style="justify-content: space-between;">
     
     <button id="consultaBackBtn" class="btn-form-action btn-back">
         <i class="fas fa-arrow-left"></i> Atrás
@@ -578,7 +580,7 @@
     z-index: 1000;
 }
 
-.modal-content {
+.pac-modal {
     display: none;  
     position: fixed;
     top: 50%;
@@ -593,7 +595,7 @@
     font-family: 'Inter', sans-serif;  
 }
 
-.modal-header {
+.pac-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -603,7 +605,7 @@
     border-top-right-radius: 16px;
 }
 
-.modal-header h2 {
+.pac-modal-header h2 {
     color: white;
     font-size: 20px;
     font-weight: 600;
@@ -621,7 +623,7 @@
     line-height: 1;
 }
 
-.modal-body {
+.pac-modal-body {
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -663,7 +665,7 @@
     background: #e0e0e0;
 }
 
-.modal-footer {
+.pac-modal-footer {
     padding: 0 25px 25px 25px;
     display: flex;
     justify-content: flex-end;
@@ -853,7 +855,7 @@ td {
  
 /* ESTILOS DE LOS MODALES DE PREDICCIÓN */
 
-.modal-content-prediction {
+.pac-modal-prediction {
     display: none;  
     position: fixed;
     top: 50%;
@@ -869,22 +871,22 @@ td {
 }
 
  
-.modal-content-prediction .modal-header {
+.pac-modal-prediction .pac-modal-header {
      
 }
 
-.modal-body-prediction {
+.pac-modal-body-prediction {
     padding: 25px 30px;
 }
 
-.modal-body-prediction h3 {
+.pac-modal-body-prediction h3 {
     font-size: 14px;
     font-weight: 600;
     color: #555;
     margin-bottom: 4px;
 }
 
-.modal-body-prediction p {
+.pac-modal-body-prediction p {
     font-size: 15px;
     color: #333;
     margin-top: 0;
@@ -945,7 +947,7 @@ td {
     width: 650px; 
 }
 
-.modal-body-form {
+.pac-modal-body-form {
     padding: 25px 30px;
 }
 .modal-step {
