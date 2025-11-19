@@ -22,13 +22,12 @@ Route::get('/pacientes', function () {
     return view('pacientes');
 })->name('pacientes');
 
-
 Route::get('/prueba-modal', function () {
     return view('prueba');
 });
 Route::get('/seguimiento', function () {
     return view('seguimiento');
-});
+})->name('seguimiento');
 
 Route::get('/login', function () {
     return view('login');
@@ -38,3 +37,7 @@ Route::get('/login', function () {
 Route::get('/registro', function () {
     return view('registro');
 })->name('registro');
+
+Route::get('/perfil', function () {
+    return view('perfil');
+})->name('perfil');
