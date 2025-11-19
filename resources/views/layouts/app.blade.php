@@ -12,7 +12,7 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-@vite(['resources/css/styles.css', 'resources/js/main.js','resources/css/seguimiento.css'])
+@vite(['resources/css/styles.css', 'resources/js/main.js','resources/css/seguimiento.css','resources/css/login.css','resources/css/registro.css'])
 
 </head>
 <body>

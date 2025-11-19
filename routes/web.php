@@ -29,3 +29,12 @@ Route::get('/prueba-modal', function () {
 Route::get('/seguimiento', function () {
     return view('seguimiento');
 });
+
+Route::get('/login', function () {
+    return view('login');
+    
+})->name('login'); 
+
+Route::get('/registro', function () {
+    return view('registro');
+})->name('registro');
