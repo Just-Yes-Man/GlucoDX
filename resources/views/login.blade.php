@@ -8,7 +8,7 @@
     
     {{-- Card 1: El formulario --}}
     <div class="auth-card">
-        <h2>Crea tu cuenta</h2>
+        <h2>Login</h2>
 
         <form>
             @csrf
@@ -31,7 +31,7 @@
         {{-- Asumimos una ruta 'login' --}}
         <a href="{{ route('registro') }}">No tienes una cuenta? Haz clic aqui</a>
         
-        <button type="submit" form="registerForm" class="btn-submit">
+        <button onclick="window.location='{{ route('home') }}'" type="submit" form="registerForm" class="btn-submit">
             Continuar &raquo;
         </button>
     </div>
