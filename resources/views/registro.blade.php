@@ -51,7 +51,7 @@
     <div class="form-card-footer">
         <a href="{{ route('login') }}" class="auth-link">Tienes una cuenta? Haz clic aqui</a>
         
-        <button type="submit" form="registerForm" class="btn-submit">
+        <button onclick="window.location='{{ route('home') }}'" type="submit" form="registerForm" class="btn-submit">
             Crear Cuenta &raquo;
         </button>
     </div>

@@ -17,19 +17,35 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <img src="{{ asset('images/logo.svg') }}" alt="Logo" class="logo">
-            <span class="brand">GLUCO DX</span>
-        </div>
-        <div class="navbar-right">
-            <a href="#" class="nav-link">Pacientes</a>
-            <a href="#" class="nav-link">Diagnóstico</a>
-            <div class="profile">
-                <img src="{{ asset('images/user-icon.svg') }}" alt="Usuario" class="profile-icon">
-            </div>
-        </div>
-    </nav>
+   <nav class="navbar">
+    <div class="navbar-left">
+        <button class="menu-btn" onclick="openSidebar()">☰</button>
+        <img src="{{ asset('images/logo_glucoDX.jpeg') }}" alt="Logo" class="logo">
+        <span class="brand">GLUCO DX</span>
+    </div>
+
+
+    </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">×</button>
+
+     <div class="sidebar-header">
+        <img src="{{ asset('images/logo_glucoDX.jpeg') }}" class="logo" alt="Logo">
+        <span class="sidebar-title">GLUCO DX</span>
+    </div>
+        
+
+    <a href="{{ route('home') }}" class="sidebar-link">home</a>
+    <a href="{{ route('pacientes') }}" class="sidebar-link">Pacientes</a>
+    <a href="{{ route('perfil') }}" class="sidebar-link">perfil</a>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
 
     <main class="content">
         @yield('content')
@@ -37,3 +53,14 @@
 
 </body>
 </html>
+<script>
+function openSidebar() {
+    document.getElementById('sidebar').style.left = '0';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function closeSidebar() {
+    document.getElementById('sidebar').style.left = '-260px';
+    document.getElementById('overlay').style.display = 'none';
+}
+</script>
