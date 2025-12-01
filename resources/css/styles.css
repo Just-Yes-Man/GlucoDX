@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f3f3f7;
+    font-family: "Poppins", sans-serif;
+    background-color: #f3f3f3;
 }
 
 /* ===== DASHBOARD ===== */
@@ -13,7 +13,7 @@ body {
 .summary {
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     padding: 30px 40px;
     margin-bottom: 40px;
 }
@@ -43,7 +43,7 @@ body {
     padding: 20px 30px;
     width: 230px;
     border: 1px solid #eee;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
 
@@ -75,7 +75,7 @@ body {
     background: #fff;
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 450px;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .view-all {
-    color: #1800AD;
+    color: #1800ad;
     text-decoration: none;
     font-weight: 500;
     display: inline-block;
@@ -143,7 +143,7 @@ body {
     background: #fff;
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     min-width: 350px;
 }
 
@@ -161,7 +161,7 @@ body {
     background: #fff;
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: #555;
 }
 
@@ -169,15 +169,9 @@ body {
     margin: 10px 0;
 }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-}
-
 /* NAVBAR */
 .navbar {
-    background-color: #1800AD;
+    background-color: #1800ad;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -189,6 +183,14 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 .logo {
@@ -232,11 +234,80 @@ body {
 .profile-icon {
     width: 30px;
     height: 30px;
-    filter: invert(1); /
+    filter: invert(1);
 }
 
 .chart {
-    width: 400px;  
-    height: 300px; 
-    margin: 0 auto; 
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #1800ad;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.sidebar-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.sidebar-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1500;
 }

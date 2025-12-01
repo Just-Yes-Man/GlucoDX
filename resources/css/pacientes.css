@@ -1,0 +1,553 @@
+.patients-container {
+    background-color: #f3f3f3;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* colores principales */
+:root {
+    --primary: #2b00ff;
+    --secondary: #f3f3f3;
+}
+
+/* estilos para el nombre clickeable */
+.patient-name {
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+}
+.patient-name:hover {
+    text-decoration: underline;
+}
+
+/* ESTILOS DEL MODAL       */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.pac-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 420px;
+    max-width: 90%;
+    z-index: 1001;
+    font-family: "Inter", sans-serif;
+}
+
+.pac-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #2b00ff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.pac-modal-header h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.pac-modal-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-patient-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.modal-patient-info span {
+    font-size: 15px;
+    color: #333;
+}
+
+#modalPatientName {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.modal-option-btn {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-option-btn:hover {
+    background: #e0e0e0;
+}
+
+.pac-modal-footer {
+    padding: 0 25px 25px 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-next-btn {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-next-btn:hover {
+    background: #e0e0e0;
+}
+
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.pagination-container button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.pagination-container button:hover {
+    background-color: #1a00b3;
+}
+
+.patients-container {
+    background-color: #f3f3f3;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.patients-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.patients-header h2 {
+    font-weight: 600;
+    color: #333;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #000;
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.search-add {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+.search-box i {
+    color: #666;
+    margin-right: 5px;
+}
+
+.add-btn {
+    background-color: #eee;
+    color: #777;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.patients-table {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+    color: #333;
+}
+
+/* badges de riesgo */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.badge.normal {
+    background: #d9ffd9;
+    color: #006d00;
+    border: 1px solid #8fdc8f;
+}
+.badge.pre {
+    background: #fff6cc;
+    color: #b8860b;
+    border: 1px solid #f5d96a;
+}
+.badge.diabetes {
+    background: #ffd6d6;
+    color: #a30000;
+    border: 1px solid #f57a7a;
+}
+
+/* Botones */
+.btn-action {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn-action i {
+    font-size: 15px;
+    color: #555;
+}
+.btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+.btn-delete:hover i {
+    color: #ff3b3b;
+}
+.btn-edit:hover i {
+    color: #2b00ff;
+}
+
+/* ESTILOS DE LOS MODALES DE PREDICCIÓN */
+
+.pac-modal-prediction {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    z-index: 1002;
+    font-family: "Inter", sans-serif;
+}
+
+.pac-modal-body-prediction {
+    padding: 25px 30px;
+}
+
+.pac-modal-body-prediction h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.pac-modal-body-prediction p {
+    font-size: 15px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* estilos para el modal de Error */
+.warning-icon {
+    font-size: 80px;
+    color: #fbc02d;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    line-height: 1;
+}
+
+/* ESTILOS DEL MODAL DE CONSULTA */
+
+/* indicador de pasos */
+.step-indicator {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 30px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: #aaa;
+}
+.step-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 3px solid #f7f7f7;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+.step-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+.step-item.active .step-dot {
+    background-color: var(--primary);
+    border-color: #f7f7f7;
+}
+.step-item.active .step-label {
+    color: var(--primary);
+}
+
+/* --- estilos del formulario --- */
+#consultaModal {
+    width: 650px;
+}
+
+.pac-modal-body-form {
+    padding: 25px 30px;
+}
+.modal-step {
+    display: none;
+}
+.modal-step.active {
+    display: block;
+}
+
+/* grid para campos de formulario */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+/* grid para campos de medicación */
+.form-grid-meds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.form-group input[type="text"],
+.form-group textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(43, 0, 255, 0.1);
+}
+.form-group textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* campo de fecha con ícono */
+.form-group-date {
+    position: relative;
+}
+.form-group-date i {
+    position: absolute;
+    right: 12px;
+    top: 36px;
+    color: #777;
+}
+
+/* paso 3 medicación */
+.btn-add-med {
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 40px;
+}
+.btn-add-med:hover {
+    background: #d0d0d0;
+}
+
+.meds-list-header {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.8fr 1fr 0.5fr;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    padding: 15px 10px 5px 10px;
+    border-bottom: 2px solid #eee;
+}
+.meds-list-container {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+.meds-list-item {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.8fr 1fr 0.5fr;
+    gap: 10px;
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+}
+.meds-list-item:last-child {
+    border-bottom: none;
+}
+.meds-actions {
+    display: flex;
+    gap: 5px;
+}
+.btn-action-med {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #777;
+}
+.btn-action-med:hover i.fa-trash {
+    color: #ff3b3b;
+}
+.btn-action-med:hover i.fa-pen {
+    color: var(--primary);
+}
+
+/* botones del Footer */
+.btn-form-action {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-back {
+    background-color: #f0f0f0;
+    color: #333;
+}
+.btn-back:hover {
+    background-color: #e0e0e0;
+}
+.btn-guardar {
+    background-color: var(--primary);
+    color: white;
+}
+.btn-guardar:hover {
+    background-color: #1a00b3;
+}
+.footer-right-buttons {
+    display: flex;
+    gap: 10px;
+}

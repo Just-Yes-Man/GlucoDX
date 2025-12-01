@@ -15,4 +15,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->name('home');
+
+
+Route::get('/pacientes', function () {
+    return view('pacientes');
+})->name('pacientes');
+
+Route::get('/prueba-modal', function () {
+    return view('prueba');
 });
+Route::get('/seguimiento', function () {
+    return view('seguimiento');
+})->name('seguimiento');
+
+Route::get('/login', function () {
+    return view('login');
+    
+})->name('login'); 
+
+Route::get('/registro', function () {
+    return view('registro');
+})->name('registro');
+
+Route::get('/perfil', function () {
+    return view('perfil');
+})->name('perfil');

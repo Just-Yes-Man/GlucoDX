@@ -1,0 +1,123 @@
+/* Contenedor principal de todo el formulario */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Icono de usuario de arriba */
+.auth-user-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+/* Estilo para las dos tarjetas blancas */
+.auth-card,
+.auth-card-footer {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid #eaeaea;
+}
+
+/* Tarjeta de arriba (la del formulario) */
+.auth-card {
+    text-align: center;
+}
+
+/* Título "Crea tu cuenta" */
+.auth-card h2 {
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Grupo de etiqueta + input */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Etiquetas (Cedula, Contraseña) */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Cajas de texto (inputs) */
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #fdfdfd;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto al hacer clic en un input */
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    outline: none;
+    border-color: #1800ad;
+    box-shadow: 0 0 0 3px rgba(24, 0, 173, 0.1);
+}
+
+/* Tarjeta de abajo (la del link y botón) */
+.auth-card-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+/* Link "No tienes una cuenta..." */
+.auth-link {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #8a2be2;
+}
+
+/* Botón "Crear Cuenta" */
+.btn-submit {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre texto e ícono */
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    background: #ffffff;
+    border: 1px solid #bdbdbd; /* Borde gris */
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Icono de flecha (SVG) dentro del botón */
+.btn-submit svg {
+    stroke: #444;
+}

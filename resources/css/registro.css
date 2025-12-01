@@ -1,0 +1,131 @@
+/* Contenedor principal de todo el formulario */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 40px auto;
+}
+
+.auth-user-icon {
+    font-size: 60px;
+    opacity: 0.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-card,
+.form-card-footer {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 35px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid #eaeaea;
+}
+
+/* Tarjeta del formulario */
+.form-card {
+    text-align: center;
+}
+
+/* Título "Crea tu cuenta" */
+.form-card h2 {
+    margin: 0 0 30px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Grupo de etiqueta + input */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* En la fila, cada grupo de input es flexible */
+.input-row .input-group {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 0;
+}
+
+/* Los inputs que no están en una fila ocupan todo el ancho */
+.form-card > form > .input-group {
+    width: 100%;
+}
+
+/* Etiquetas (Cedula, Correo, etc.) */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Cajas de texto (inputs) */
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Efecto al hacer clic en un input */
+.input-group input:focus {
+    outline: none;
+    border-color: #1800ad;
+    box-shadow: 0 0 0 3px rgba(24, 0, 173, 0.1);
+}
+
+/* Tarjeta de abajo (link y botón) */
+.form-card-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 35px;
+}
+
+/* Link "Tienes una cuenta..." */
+.auth-link {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #8a2be2;
+}
+
+/* Botón "Crear Cuenta" */
+.btn-submit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    background: #ffffff;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #f9f9f9;
+}
