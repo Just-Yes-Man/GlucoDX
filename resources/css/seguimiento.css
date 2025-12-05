@@ -4,7 +4,7 @@
     height: 100%;
     padding: 20px;
     gap: 25px;
-    background: #f5f5f7;
+    background: #f3f3f3;
 }
 .title {
     margin-top: 20px;
@@ -21,7 +21,7 @@
     border-radius: 20px;
     padding: 10px 35px;
     font-size: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 .search-box input::placeholder {
     color: #000;
@@ -250,17 +250,31 @@
 
 /* Botón volver */
 .btn-back {
-    background: none;
-    border: none;
-    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    background-color: #d9d9d9; /* fondo igual */
+    padding: 6px 14px; /* mismo tamaño visual */
+    border-radius: 10px; /* igual de redondeado */
+    border: none; /* sin borde */
+    box-shadow: none;
+
+    color: #4d4d4d;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
     margin-bottom: 20px;
-    color: #4d4d4d;
-    font-weight: 500;
 }
+
 .btn-back:hover {
-    color: #000;
-    text-decoration: underline;
+    background: #d9d9d9; /* hover suave */
+}
+
+.btn-back .arrow {
+    font-size: 16px;
+    margin-right: 2px;
 }
 
 /* Cabecera Detalle (Titulo izq, Fecha der) */
@@ -344,4 +358,29 @@
     font-size: 15px;
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.back-btn-p {
+    width: 6%;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-right: 15px;
+    padding: 8px 14px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.back-btn-p i {
+    font-size: 14px;
+}
+
+.back-btn-p:hover {
+    background-color: #d0d0d0;
+    color: #000;
 }

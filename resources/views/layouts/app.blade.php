@@ -28,22 +28,19 @@
     </div>
 </nav>
 
-<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
     <button class="close-btn" onclick="closeSidebar()">×</button>
-
      <div class="sidebar-header">
-        <img src="{{ asset('images/logo_glucoDX.jpeg') }}" class="logo" alt="Logo">
+        <img src="{{ asset('images/logo_glucoDX.jpeg') }}" class="logo-si" alt="Logo">
         <span class="sidebar-title">GLUCO DX</span>
     </div>
         
 
-    <a href="{{ route('home') }}" class="sidebar-link">home</a>
+    <a href="{{ route('home') }}" class="sidebar-link">Inicio</a>
     <a href="{{ route('pacientes') }}" class="sidebar-link">Pacientes</a>
-    <a href="{{ route('perfil') }}" class="sidebar-link">perfil</a>
+    <a href="{{ route('perfil') }}" class="sidebar-link">Perfil</a>
 </div>
 
-<!-- Overlay -->
 <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
 
 

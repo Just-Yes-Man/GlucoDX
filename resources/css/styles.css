@@ -199,6 +199,13 @@ body {
     border-radius: 50%;
 }
 
+.logo-si {
+    margin-top: 30%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
 .brand {
     font-size: 22px;
     font-weight: 600;
@@ -271,6 +278,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-bottom: 50px;
 }
 
 .sidebar-logo {
@@ -280,6 +288,7 @@ body {
 }
 
 .sidebar-title {
+    margin-top: 30%;
     font-size: 22px;
     font-weight: 600;
     color: white;
@@ -293,11 +302,15 @@ body {
 }
 
 .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     font-size: 32px;
     color: white;
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 2001;
 }
 
 /* Overlay */
@@ -310,4 +323,39 @@ body {
     background: rgba(0, 0, 0, 0.4);
     display: none;
     z-index: 1500;
+}
+
+.global-confirmation-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda; /* Verde claro de éxito */
+    color: #155724; /* Verde oscuro de éxito */
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    z-index: 5000;
+    display: none; /* Oculto por defecto */
+}
+
+.global-confirmation-message i {
+    margin-right: 10px;
+}
+
+/* Animación slideIn */
+.global-confirmation-message.show {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

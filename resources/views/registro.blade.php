@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+.menu-btn, .sidebar, #overlay {
+    display: none !important;
+}
+.navbar-left {
+    padding-left: 5px; 
+}
+</style>
+
 <div class="auth-container">
     
    
@@ -51,7 +60,7 @@
     <div class="form-card-footer">
         <a href="{{ route('login') }}" class="auth-link">Tienes una cuenta? Haz clic aqui</a>
         
-        <button onclick="window.location='{{ route('home') }}'" type="submit" form="registerForm" class="btn-submit">
+        <button onclick="window.location='{{ route('home') }}?status=register_success'" type="submit" form="registerForm" class="btn-submit">
             Crear Cuenta &raquo;
         </button>
     </div>

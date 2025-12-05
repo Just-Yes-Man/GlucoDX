@@ -12,10 +12,11 @@
 
 /* Icono de usuario de arriba */
 .auth-user-icon {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 20px;
     opacity: 0.6;
+    filter: brightness(0) saturate(100%);
 }
 
 /* Estilo para las dos tarjetas blancas */
@@ -93,19 +94,18 @@
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    color: #8a2be2;
+    color: #1800ad;
 }
 
-/* Botón "Crear Cuenta" */
 .btn-submit {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre texto e ícono */
+    gap: 5px;
     font-size: 15px;
     font-weight: 600;
-    color: #444;
-    background: #ffffff;
-    border: 1px solid #bdbdbd; /* Borde gris */
+    color: #ffffff;
+    background-color: #1800ad;
+    border: none;
     border-radius: 10px;
     padding: 10px 15px;
     cursor: pointer;
@@ -113,11 +113,11 @@
 }
 
 .btn-submit:hover {
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #110080;
+    box-shadow: 0 4px 10px rgba(24, 0, 173, 0.3);
 }
 
 /* Icono de flecha (SVG) dentro del botón */
 .btn-submit svg {
-    stroke: #444;
+    stroke: #ffffff;
 }

@@ -3,6 +3,23 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+@php
+    // Obtener el parámetro 'status' de la URL
+    $status = request()->query('status');
+    $message = '';
+    
+    if ($status === 'login_success') {
+        $message = '¡Bienvenido de nuevo! Sesión iniciada correctamente.';
+    } elseif ($status === 'register_success') {
+        $message = '¡Cuenta creada con éxito! Bienvenido a GLUCO DX.';
+    }
+@endphp
+
+@if ($message)
+<div id="globalConfirmation" class="global-confirmation-message">
+    <i class="fas fa-check-circle"></i> {{ $message }}
+</div>
+@endif
 <div class="dashboard">
     <section class="summary">
         <h2>Hola Dr. Sam</h2>
@@ -24,7 +41,6 @@
             </div>
         </div>
 
-        <!-- 🔘 Botón para abrir el modal -->
         <button class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#pacienteModal">
             Asignar nuevo paciente
         </button>
@@ -75,7 +91,29 @@
     </section>
 </div>
 
-<!-- 🧩 Aquí se incluye el modal reutilizable -->
 @include('components.popup_pacientes')
+
+@if ($message)
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const confirmation = document.getElementById('globalConfirmation');
+        
+        // Muestra y anima el mensaje
+        confirmation.style.display = 'flex'; 
+        confirmation.classList.add('show');
+        
+        // Oculta el mensaje después de 3 segundos
+        setTimeout(() => {
+            confirmation.style.display = 'none';
+        }, 3000);
+        
+        // OPCIONAL: Eliminar el parámetro 'status' de la URL para que no se muestre al refrescar
+        if (window.history.replaceState) {
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({path:cleanUrl},'',cleanUrl);
+        }
+    });
+</script>
+@endif
 
 @endsection

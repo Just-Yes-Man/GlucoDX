@@ -6,7 +6,7 @@
 
 /* colores principales */
 :root {
-    --primary: #2b00ff;
+    --primary: #1800ad;
     --secondary: #f3f3f3;
 }
 
@@ -45,7 +45,6 @@
     width: 420px;
     max-width: 90%;
     z-index: 1001;
-    font-family: "Inter", sans-serif;
 }
 
 .pac-modal-header {
@@ -53,7 +52,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
-    background-color: #2b00ff;
+    background-color: #1800ad;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
@@ -179,12 +178,31 @@
     color: #333;
 }
 
+/* MODIFICADO: Estilo de botón para Regresar */
 .back-btn {
     text-decoration: none;
-    color: #000;
-    font-size: 22px;
-    margin-right: 10px;
+    color: black;
+    font-size: 15px;
+    margin-right: 15px;
+    padding: 8px 14px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
 }
+
+.back-btn i {
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background-color: #d0d0d0;
+    color: #000;
+}
+/* FIN MODIFICADO */
 
 .search-add {
     display: flex;
@@ -215,7 +233,7 @@
 
 .add-btn {
     background-color: #eee;
-    color: #777;
+    color: black;
     border: none;
     padding: 8px 16px;
     border-radius: 10px;
@@ -290,6 +308,21 @@ td {
     cursor: pointer;
     transition: all 0.25s ease;
 }
+/* Estilo para botones deshabilitados, según recomendación de UX */
+.btn-action:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: none;
+    transform: none; /* Previene hover effects */
+}
+.btn-action:disabled:hover {
+    box-shadow: none;
+    transform: none;
+}
+.btn-action:disabled i {
+    color: #999; /* Color de icono más neutral */
+}
+
 .btn-action i {
     font-size: 15px;
     color: #555;
@@ -550,4 +583,35 @@ td {
 .footer-right-buttons {
     display: flex;
     gap: 10px;
+}
+
+.confirmation-message-pacientes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    z-index: 5000;
+    display: none;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.confirmation-message-pacientes i {
+    margin-right: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

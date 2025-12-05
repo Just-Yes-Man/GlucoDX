@@ -5,9 +5,9 @@
 <script src="{{ asset('js/seguimiento.js') }}"></script>
 
 <div class="title">
-    <<a href="{{ route('pacientes') }}" class="btn-back">
-     Regresar
-</a>
+  <a href="{{ route('pacientes') }}" class="back-btn-p">
+            <i class="fas fa-arrow-left"></i> Regresar
+        </a>
     <h3>Detalle del paciente</h3>
 </div>
 
@@ -22,10 +22,10 @@
 
         <div class="patient-list">
             <ul class="patients-ul">
-                <li class="patient-item" data-id="1">Maria Lopez <span>24/04/12</span></li>
-                <li class="patient-item" data-id="2">Maria Lopez <span>24/04/12</span></li>
-                <li class="patient-item" data-id="3">Maria Lopez <span>24/04/12</span></li>
-                <li class="patient-item" data-id="4">Maria Lopez <span>24/04/12</span></li>
+                <li class="patient-item" data-id="1">Maria Lopez Soto <span>27/11/2024</span></li>
+                <li class="patient-item" data-id="2">Maria Lopez Soto <span>24/11/2024</span></li>
+                <li class="patient-item" data-id="3">Maria Lopez Soto <span>19/11/2024</span></li>
+                <li class="patient-item" data-id="4">Maria Lopez Soto <span>18/11/2024</span></li>
             </ul>
         </div>
     </aside>
@@ -59,14 +59,14 @@
                 <p>El paciente presenta valores estables. Se recomienda mantener control alimenticio y revisión médica en 3 meses.</p>
 
                 <div class="actions">
-                    <button class="btn btn-primary">Exportar informe</button>
-                    <button class="btn btn-secondary">Historial completo</button>
+                    <button class="btn btn-primary"><i class="fas fa-file-export"></i>  Exportar informe</button>
+                    <button class="btn btn-secondary"><i class="fas fa-history"></i>  Historial completo</button>
                 </div>
             </div>
 
             <div id="seguimiento-detalle" style="display:none;">
 
-                <button onclick="volverSeguimiento()" class="btn-back">← Regresar</button>
+                <button onclick="volverSeguimiento()" class="btn-back"><i class="fas fa-arrow-left"></i> Regresar</button>
 
                 <div class="det-header-row">
                     <h3>Detalles consulta</h3>
@@ -266,7 +266,7 @@
 <script>
 /* Consultas simuladas */
 const consultas = {
-    1: { glucosa: "105.4", hba1c: "5.8", sistolica: "120", diastolica: "80", peso: "68.5", imc: "24.3", fecha: "27/10/24", tipo: "Medicación", duracion: "60 min", medicamento: "Paracetamol", dosis: "500mg", frecuencia: "Cada 8 horas", via: "Oral", comentarios: "Paciente estable, mantener dieta y control mensual." },
+    1: { glucosa: "105.4", hba1c: "5.8", sistolica: "120", diastolica: "80", peso: "68.5", imc: "24.3", fecha: "27/11/24", tipo: "Medicación", duracion: "60 min", medicamento: "Paracetamol", dosis: "500mg", frecuencia: "Cada 8 horas", via: "Oral", comentarios: "Paciente estable, mantener dieta y control mensual." },
     2: { glucosa: "110", hba1c: "6.1", sistolica: "118", diastolica: "79", peso: "70.2", imc: "24.8", fecha: "15/09/24", tipo: "Revisión general", duracion: "45 min", medicamento: "Metformina", dosis: "850mg", frecuencia: "Cada 12 horas", via: "Oral", comentarios: "Ajustar dieta." },
     3: { glucosa: "99", hba1c: "5.4", sistolica: "119", diastolica: "81", peso: "67.1", imc: "23.9", fecha: "02/08/24", tipo: "Control", duracion: "30 min", medicamento: "N/A", dosis: "-", frecuencia: "-", via: "-", comentarios: "Sin novedades." },
     4: { glucosa: "130", hba1c: "6.5", sistolica: "125", diastolica: "90", peso: "72.0", imc: "26.1", fecha: "01/07/24", tipo: "Urgencia", duracion: "20 min", medicamento: "Insulina", dosis: "10u", frecuencia: "Única dosis", via: "Subcutánea", comentarios: "Control inmediato requerido." }

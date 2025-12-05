@@ -5,7 +5,7 @@
     // Pacientes simulados (10 registros)
     // *** NOTA: Añadí 'peso' y 'altura' para que el modal funcione ***
     $pacientes = [
-        ['nombre' => 'Evaristo Orea Gil', 'edad' => 20, 'curp' => 'OEGA051011HVZRLDA1', 'sexo' => 'Masculino', 'tipo' => 'A+', 'riesgo' => 'diabetes', 'peso' => 75.5, 'altura' => 170],
+        ['nombre' => 'Maria Lopez Soto', 'edad' => 20, 'curp' => 'OEGA051011HVZRLDA1', 'sexo' => 'Femenino', 'tipo' => 'A+', 'riesgo' => 'diabetes', 'peso' => 75.5, 'altura' => 170],
         ['nombre' => 'Lucía Pérez Soto', 'edad' => 35, 'curp' => 'PESL900421MDFRTN09', 'sexo' => 'Femenino', 'tipo' => 'O-', 'riesgo' => 'pre', 'peso' => null, 'altura' => null],
         ['nombre' => 'Juan Morales Díaz', 'edad' => 42, 'curp' => 'MODJ830902HDFRTN03', 'sexo' => 'Masculino', 'tipo' => 'B+', 'riesgo' => 'normal', 'peso' => 88.1, 'altura' => 180],
         ['nombre' => 'María López Cruz', 'edad' => 28, 'curp' => 'LOCM950712MDFRTN05', 'sexo' => 'Femenino', 'tipo' => 'AB+', 'riesgo' => 'normal', 'peso' => 68.5, 'altura' => 170],
@@ -19,9 +19,15 @@
     ];
 @endphp
 
+<div id="consultaConfirmation" class="confirmation-message-pacientes" style="display: none;">
+    <i class="fas fa-check-circle"></i> Consulta guardada correctamente.
+</div>
+
 <div class="patients-container">
     <div class="patients-header">
-        <a href="{{ route('home') }}" class="back-btn">←</a>
+        <a href="{{ route('home') }}" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Regresar
+        </a>
         <h2>Lista de Pacientes</h2>
 
         <div class="search-add">
@@ -304,6 +310,8 @@
     const stepIndicators = document.querySelectorAll('.step-indicator .step-item');
     const btnAddMedicacion = document.getElementById('btnAddMedicacion');
     const medsListContainer = document.getElementById('medsListContainer');
+    // Nuevo: selector para el mensaje de confirmación
+    const consultaConfirmation = document.getElementById('consultaConfirmation'); 
 
 
     // logica de paginación y búsqueda
@@ -372,10 +380,7 @@ tbody.addEventListener('click', (e) => {
 });
 
 
-
-
     // logica del modal de opciones
-
     function openOptionsModal(curp) {
         currentPatient = pacientes.find(p => p.curp === curp);
         if (!currentPatient) return;
@@ -388,7 +393,6 @@ tbody.addEventListener('click', (e) => {
 
     function closeOptionsModal() {
         optionsModal.style.display = 'none';
-         
     }
 
    
@@ -518,9 +522,18 @@ tbody.addEventListener('click', (e) => {
     });
     
     consultaGuardarBtn.addEventListener('click', () => {
-        //lógica para guardar la consulta (simulación)
-        alert('¡Consulta guardada (simulación)!');
+        // 1. Ocultar modal de consulta
         closeConsultaModal();
+        
+        // 2. Mostrar mensaje de confirmación
+        consultaConfirmation.style.display = 'block';
+        
+        // 3. Ocultar mensaje y redirigir después de 1.5 segundos (para que se vea la confirmación)
+        setTimeout(() => {
+            consultaConfirmation.style.display = 'none';
+            window.location.href = "{{ route('seguimiento') }}"; 
+        }, 1500);
+        
     });
 
     // lógica para "Agregar Medicación"
